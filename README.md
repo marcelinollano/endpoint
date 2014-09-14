@@ -1,7 +1,7 @@
 Endpoint
 ========
 
-Endpoint is a humble [Tweetbot](http://tapbots.com) companion. It is close to a [CloudApp](http://getcloudapp.com) or [Droplr](http://droplr.com) replacement, but not quite. It is also the result of my frustration with other services that no longer allow for geeky features because they go mainstream (and good for them!). If you love hacking your own tools this may be for you.
+Endpoint is a humble [Tweetbot](http://tapbots.com) companion. It is close to a [CloudApp](http://getcloudapp.com) or [Droplr](http://droplr.com) replacement, but not quite. It is also the result of my frustration with other services that no longer allow for geeky features because they go mainstream (and good for them!). If you love hacking your own tools, this is for you.
 
 ![Poster](doc/poster.png)
 
@@ -49,7 +49,7 @@ If you still want to deploy to Heroku you will need to change the database strin
 Using the API
 -------------
 
-The API is really minimal. You have a single URL to query with three different request methods: `GET`, `POST`, `DELETE`. For each method the API takes different params, but all are pretty much the same. 
+The API is really minimal. You have a single URL to query with three different request methods: `GET`, `POST`, `DELETE`. For each method the API takes different params, but all are pretty much the same.
 
 The API follows a design methodology that I call: It's your fault(TM). This means that you will get pretty much a `Bad Request` for any request that it is not valid but also if the request is valid but throws an error on the server. I know, I know, it sounds really bad, but the API is so small that it doesn't bother me.
 
@@ -85,7 +85,7 @@ curl -X DELETE "http://exam.pl/api?token={token}&slug={slug}"
 Tweetbot Setup
 --------------
 
-I love Tweetbot, it is solid and fun to use. The main goal of this project was to have a service to use with Tweetbot. To setup Tweetbot you have to go to `Admin > Help` in Endpoint. You will see a bunch of URLs that you need to copy into Tweetbot. 
+I love Tweetbot, it is solid and fun to use. The main goal of this project was to have a service to use with Tweetbot. To setup Tweetbot you have to go to `Admin > Help` in Endpoint. You will see a bunch of URLs that you need to copy into Tweetbot.
 
 Go to  `Settings > Account` in Tweetbot, select `Custom` for each type and paste the URLs:
 
@@ -111,13 +111,13 @@ This time I wanted to automate a way to remove files that were already shared as
 
 ```
 RACK_ENV=production ./bin/purge
-```  
+```
 
 You can create a Crontab task to run daily with `sudo crontab -e` on your server:
 
 ```
 0 0 * * * RACK_ENV=production /<PATH>/bin/purge
-```  
+```
 
 In the `.env` file you can specify how many days into the past you want to keep the files. For example, if you want to keep files for a month set the environment variable to `PURGE=30`.
 
@@ -157,6 +157,6 @@ Anyway, I really enjoyed starting with some simple queries in the Terminal to ha
 License
 -------
 
-You can do whatever you want, but Tweetbot, CloupApp, Droplr and any other trademarks mentioned here are copyright of their respective owners. I used all of them in the past and I loved them. 
+You can do whatever you want, but Tweetbot, CloupApp, Droplr and any other trademarks mentioned here are copyright of their respective owners. I used all of them in the past and I loved them.
 
 Give them a try too!
