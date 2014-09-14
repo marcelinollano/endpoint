@@ -1,7 +1,9 @@
 Endpoint
 ========
 
-Endpoint is a humble [Tweetbot](http://tapbots.com) companion. It is close to a [CloudApp](http://getcloudapp.com) or [Droplr](http://droplr.com) replacement, but not quite. It is also the result of my frustration with other services that no longer allow for geeky features because they go mainstream (and good for them!). If you love hacking your own tools, this is for you.
+Endpoint is a humble [Tweetbot](http://tapbots.com) companion. It is close to a [CloudApp](http://getcloudapp.com) or [Droplr](http://droplr.com) replacement, but not quite. It is also the result of my frustration with other services that no longer allow for geeky features because they go mainstream (and good for them!).
+
+If you love hacking your own tools, this is for you.
 
 ![Poster](doc/poster.png)
 
