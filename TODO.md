@@ -44,4 +44,4 @@ Version 1
 - [x] Fix purge test
 - [x] Use folder
 - [x] Write HELP
-- [ ] Write README
+- [x] Write README
