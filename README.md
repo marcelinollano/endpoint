@@ -51,7 +51,7 @@ The API is really minimal. You have a single URL to query with three different r
 
 The API follows a design methodology that I call: It's your fault(TM). This means that you will get pretty much a `Bad Request` for any request that it is not valid but also if the request is valid but throws an error on the server. I know, I know, it sounds really bad, but the API is so small that it doesn't bother me.
 
-### Shorten URLs
+#### Shorten URLs
 
 ```
 curl -X GET "http://exam.pl/api?token={token}&url={url}&slug={slug}"
@@ -61,7 +61,7 @@ curl -X GET "http://exam.pl/api?token={token}&url={url}&slug={slug}"
 - **url** (required): The URL that you want to get shortened.
 - **slug** (optional): You can override the random slug of the shortened link.
 
-### Share Files
+#### Share Files
 
 ```
 curl -X POST --form "media=@{file}" "http://exam.pl/api?token={token}&slug={slug}"
@@ -71,7 +71,7 @@ curl -X POST --form "media=@{file}" "http://exam.pl/api?token={token}&slug={slug
 - **file** (required): The file that you want to upload for sharing.
 - **slug** (optional): You can override the random slug of the shortened link.
 
-### Delete URLs or Files
+#### Delete URLs or Files
 
 ```
 curl -X DELETE "http://exam.pl/api?token={token}&slug={slug}"
