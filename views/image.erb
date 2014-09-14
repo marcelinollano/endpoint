@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title><%= @item.name %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="photo" />
+  <meta name="twitter:title" content="<%= @item.name %>" />
+  <meta name="twitter:image:src" content="<%= ENV['SHORT'] %>/<%= @item.url %>" />
+  <!-- OpenGraph -->
+  <meta property="og:title" content="<%= @item.name %>" />
+  <meta property="og:image" content="<%= ENV['SHORT'] %>/<%= @item.url %>" />
+  <link href="/favicon.ico" rel="shortcut icon" />
+  <style>
+    body    { background-color: #fff; font-size: 62.5%; text-align: center; }
+    section { margin: 2.6em auto; padding: 0 2em; }
+    img     { display: block; margin: 0 auto; max-width: 100%; }
+  </style>
+</head>
+<body>
+  <section>
+    <img alt="<%= @item.name %>" src="<%= @item.url %>" />
+  </section>
+  <script>
+    var image  = document.getElementsByTagName('img')[0];
+    var zoom   = false;
+    var resize = function() {
+      if(zoom) {
+        image.style.maxHeight = image.naturalHeight + 'px';
+        image.style.maxWidth  = 'none';
+        image.style.cursor    = 'zoom-out';
+        image.style.cursor    = '-webkit-zoom-out';
+      } else {
+        var height = document.documentElement.clientHeight - 52;
+        image.style.maxHeight = height + 'px';
+        image.style.maxWidth  = '100%';
+        image.style.cursor    = 'zoom-in';
+        image.style.cursor    = '-webkit-zoom-in';
+      };
+    };
+    image.addEventListener  ('click',  function() { zoom = !zoom; resize(); });
+    window.addEventListener ('resize', function() { resize(); });
+    window.addEventListener ('load',   function() { resize(); });
+  </script>
+</body>
+</html>

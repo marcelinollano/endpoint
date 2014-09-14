@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'dotenv'
+Dotenv.load
+
+Dir.glob('./test/fixtures/*').each do |file|
+  system("curl --form \"media=@#{file}\" \"#{ENV['SHORT']}/api?token=#{ENV['TOKEN']}\"")
+  puts
+  sleep(1)
+end
+system("curl -X GET \"#{ENV['SHORT']}/api?token=#{ENV['TOKEN']}&url=https://en.wikipedia.org/wiki/Shiba_Inu\"")
+puts

@@ -1,0 +1,51 @@
+<div class="popup is-hidden">
+  <div class="header">
+    <a class="header-link" href="<%= ENV['SHORT'] %>/admin">Close</a>
+    <a class="header-title" href="#">Help</a>
+  </div>
+  <div class="help">
+    <p>
+      Hello, there! You have reached the Endpoint Technical Support Helpline.
+      Do not panic, it is all pretty simple. You just need to know that Endpoint
+      does three things: It shortens URLs, it stores images and files and you
+      can use it with Tweetbot.
+    </p>
+    <p>
+      To setup everything you just have to open Tweetbot on OSX or iOS and go to
+      <code>Settings > Account > User</code>. Then select the option <code>Custom</code>
+      in each input and paste the following links.
+    </p>
+    <h1>URL Shortening</h1>
+    <input value="<%= ENV['SHORT'] %>/api?token=<%= ENV['TOKEN'] %>&url=%@" />
+    <p>
+      This will take any link you paste into Tweetbot and shorten it. You can also
+      cURL using <code>GET</code> directly replacing <code>%@</code> with the link
+      you want to shorten. If you have other apps you can have your own URL shortener
+      service using this.
+    </p>
+    <h1>Image & Video Upload</h1>
+    <input value="<%= ENV['SHORT'] %>/api?token=<%= ENV['TOKEN'] %>" />
+    <p>
+      Tweetbot uses the same URL for both things. You just need to copy twice.
+      Keep in mind that Tweetbot will not allow you to throw just any image or video
+      format, but common image formats and MP4 for video work great.
+    </p>
+    <p>
+      If you need to upload any other format you can cURL using <code>POST</code>
+      directly and attach your file as a <code>media</code> param. Depending on the
+      file you upload you get a nice template for each one.
+    </p>
+
+    <h1>Bookmarklet</h1>
+    <p>
+      Finally if you want to get shortened links while you browse the web you can
+      use the bookmarklet. You just have to drag the following link to your bookmarks
+      bar and press it.
+    </p>
+    <p>
+      <a title="Bookmarklet"
+         href="javascript:location.href='<%= ENV['SHORT'] %>/api?token=<%= ENV['TOKEN'] %>&url='+encodeURIComponent(location.href);"
+         onclick="alert('Drag this bookmarklet onto your browser bar.');return false;">Bookmarklet</a>
+    </p>
+  </div>
+</div>

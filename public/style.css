@@ -1,0 +1,398 @@
+html {
+  -webkit-text-size-adjust: none;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f6f6f6;
+  font-family: 'Avenir Next', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #fff;
+  box-shadow: #eee 0 -1px 0 inset;
+  display: block;
+  height: 6em;
+  min-width: 300px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.header-title {
+  color: #222;
+  font-size: 1.8em;
+  font-weight: 600;
+  line-height: 3.4em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+}
+
+.header-link {
+  color: #333;
+  font-size: 1.4em;
+  font-weight: 600;
+  line-height: 4.2em;
+  padding: 0 1em;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  -webkit-transition-delay: 0s;
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: cubic-bezier(0.8,0,0,0.8);
+  transition-delay: 0s;
+  transition-duration: 0.4s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.8,0,0,0.8);
+  background-color: #fff;
+  box-shadow: #eee 0 -1px 0 inset;
+  clear: both;
+  display: block;
+  height: 8em;
+  min-width: 300px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.item:hover {
+  box-shadow: #eee 0 -1px 0 inset, #1eaeec -3px 0 0 0;
+}
+
+.item-link {
+  display: block;
+  height: 6em;
+  padding: 1em 1.2em;
+  text-decoration: none;
+}
+
+.item-image {
+  background-color: #ccc;
+  background-position: center;
+  background-size: cover;
+  display: block;
+  display: block;
+  float: left;
+  height: 6em;
+  margin-right: 1.2em;
+  width: 6em;
+}
+
+.item-image img {
+  display: none;
+}
+
+.item-name {
+  color: #222;
+  display: block;
+  float: left;
+  font-size: 1.4em;
+  font-weight: 600;
+  line-height: 2.6em;
+  overflow: hidden;
+  text-decoration: underline;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 74%;
+}
+
+.is-image .item-name {
+  width: 50%;
+}
+
+.item-date {
+  color: #bbb;
+  display: block;
+  float: left;
+  font-size: 1.2em;
+  font-weight: normal;
+  line-height: 1.2em;
+  width: 60%;
+}
+
+.item-hits {
+  background-color: #1eaeec;
+  border-radius: 2px;
+  color: #fff;
+  float: right;
+  font-size: 1.4em;
+  margin-top: 1.1em;
+  min-width: 1.5em;
+  padding: 0.3em 0.5em;
+  position: absolute;
+  right: 3.4em;
+  text-align: center;
+}
+
+.is-hot {
+  background-color: #ff3a40;
+}
+
+.item-delete {
+  background-image: url(delete.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  float: right;
+  height: 8em;
+  margin-top: -1em;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  width: 5em;
+}
+
+.no-items {
+  background-color: #fff;
+  box-shadow: #eee 0 -1px 0 inset;
+  display: block;
+  font-size: 1.6em;
+  font-weight: 400;
+  line-height: 5em;
+  margin: 0;
+  padding: 0 1.2em;
+}
+
+.pages {
+  background-color: #fff;
+  box-shadow: #eaeaea 0 -1px 0 inset;
+  clear: both;
+  display: block;
+  height: 6em;
+  list-style: none;
+  margin: 0;
+  min-width: 300px;
+  padding: 0;
+}
+
+.page-link {
+  color: #333;
+  display: block;
+  font-size: 1.4em;
+  font-weight: 600;
+  line-height: 4em;
+  text-align: center;
+  width: 50%;
+}
+
+.is-prev {
+  box-shadow: #eee -1px 0 0 inset;
+  float: left;
+  text-align: center;
+}
+
+.is-next {
+  float: right;
+  text-align: center;
+}
+
+.is-disabled {
+  color: #bbb;
+  cursor: default;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.popup {
+  background-color: #f6f6f6;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.help {
+  background-color: #fff;
+  overflow: hidden;
+  padding: 1.8em 2em;
+}
+
+.help h1 {
+  clear: both;
+  font-size: 1.6em;
+  font-weight: 600;
+  line-height: 2em;
+  padding: 0;
+}
+
+.help p {
+  clear: both;
+  font-size: 1.5em;
+  line-height: 1.4em;
+  margin-bottom: 1.4em;
+  margin-top: 0;
+}
+
+.help p code {
+  color: #000;
+  font-family: 'Menlo', monospace;
+  font-size: 0.9em;
+}
+
+.help a {
+  color: #222;
+  font-weight: 400;
+}
+
+.help input {
+  background: none;
+  border: none;
+  box-sizing: boder-box;
+  color: #000;
+  display: block;
+  float: left;
+  font-family: 'Menlo', monospace;
+  font-size: 1.4em;
+  margin-bottom: 1.6em;
+  padding: 0;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.help input:focus {
+  outline: none;
+}
+
+.is-deleted {
+  background-color: #f6f6f6;
+  height: 0;
+}
+
+.is-hidden {
+  display: none;
+}
+
+@media screen and (min-width: 520px) {
+  body {
+    padding-bottom: 4em;
+  }
+
+  .header {
+    background-color: #f6f6f6;
+    box-shadow: none;
+    height: auto;
+    margin: 0 auto;
+    max-width: 680px;
+    padding: 4em 0;
+    width: 90%;
+  }
+
+  .header-title {
+    display: block;
+    font-size: 1.8em;
+    line-height: 1.8em;
+    margin: 0 auto;
+    width: 6em;
+  }
+
+  .header-link {
+    float: right;
+    font-size: 1.4em;
+    line-height: 2.2em;
+    padding: 0 1em;
+    position: relative;
+    width: auto;
+  }
+
+  .content {
+    margin: 0 auto;
+    max-width: 680px;
+    width: 90%;
+  }
+
+  .item-link {
+    height: 8em;
+    padding: 1.5em;
+  }
+
+  .item-image {
+    height: 5em;
+    margin-right: 1.4em;
+    width: 5em;
+  }
+
+  .item-name {
+    font-size: 1.4em;
+    font-weight: 500;
+    line-height: 3.2em;
+    margin-right: 1em;
+    width: auto;
+  }
+
+  .is-image .item-name {
+    width: auto;
+  }
+
+  .item-date {
+    font-size: 1.2em;
+    line-height: 4em;
+    margin-right: 1.4em;
+    width: auto;
+  }
+
+  .item-delete {
+    float: right;
+    height: 8em;
+    margin-right: -1.5em;
+    margin-top: -1.5em;
+    position: relative;
+    width: 6em;
+  }
+
+  .item-hits {
+    font-size: 1.3em;
+    margin-top: 1em;
+    position: relative;
+    right: 0;
+  }
+
+  .help {
+    background-color: #f6f6f6;
+    margin: 0 auto;
+    max-width: 650px;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 520px) and (max-width: 660px) {
+  body {
+    padding-bottom: 0;
+  }
+
+  .header, .content {
+    margin: 0 auto;
+    max-width: 720px;
+    width: 100%;
+  }
+
+  .header {
+    background-color: #fff;
+    box-shadow: #eee 0 -1px 0 inset;
+    padding: 2em 0;
+  }
+
+  .pages {
+    margin-bottom: 0;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dppx) {
+  .item-delete {
+    background-image: url(delete@2x.png);
+    background-size: 14px 14px;
+  }
+}

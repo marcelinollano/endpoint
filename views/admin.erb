@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <meta name="robots" content="noindex"/>
+  <link rel="shortcut icon" href="/favicon.ico"/>
+  <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+  <div class="header">
+    <a class="header-link" href="<%= ENV['SHORT'] %>/admin#help">Help</a>
+    <a class="header-title" href="<%= ENV['SHORT'] %>/admin">
+      <span class="header-count"><%= @count %></span> items
+    </a>
+  </div>
+  <div class="content">
+    <% if @items.any? %>
+      <ul class="items">
+        <% for item in @items do %>
+          <li class="item">
+            <a class="item-link <%= 'is-image' if item.content == 'image' %>" href="<%= ENV['SHORT'] %>/<%= item.slug %>">
+              <% if item.content == 'image' %>
+                <span class="item-image" style="background-image: url(<%= item.url %>);">
+                  <img src="<%= item.url %>" alt="<%= item.name %>"/>
+                </span>
+              <% end %>
+              <span class="item-name"><%= item.name %></span>
+              <span class="item-date"><%= time_ago(item.created_at) %></span>
+              <span class="item-delete" data-slug="<%= item.slug %>">Delete</span>
+              <span class="item-hits <%= 'is-hot' if item.hits > @limit %>"><%= item.hits %></span>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+      <% if @items.page_count > 1 %>
+        <ul class="pages">
+          <li class="page-item">
+            <a class="page-link is-prev <%= 'is-disabled' if @items.first_page? %>" href="<%= ENV['SHORT'] %>/admin?page=<%= @items.prev_page %>">
+              Previous
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link is-next <%= 'is-disabled' if @items.last_page? %>" href="<%= ENV['SHORT'] %>/admin?page=<%= @items.next_page %>">
+              Next
+            </a>
+          </li>
+        </ul>
+      <% end %>
+    <% else %>
+      <p class="no-items">No items posted yet.</p>
+    <% end %>
+  </div>
+  <%= erb :help %>
+  <script>var token = '<%= ENV['TOKEN'] %>';</script>
+  <script src="/script.js"></script>
+</body>
+</html>

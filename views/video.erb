@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title><%= @item.name %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/favicon.ico" rel="shortcut icon" />
+  <style>
+    body    { background-color: #fff; font-size: 62.5%; text-align: center; }
+    section { margin: 2.6em auto; padding: 0 2em; }
+    video   { display: block; margin: 0 auto; max-width: 100%; }
+  </style>
+</head>
+<body>
+  <section>
+    <video src="<%= @item.url %>" controls preload></video>
+  </section>
+  <script>
+    var video  = document.getElementsByTagName('video')[0];
+    var resize = function() {
+      var height = document.documentElement.clientHeight - 52;
+      video.style.maxHeight = height + 'px';
+      video.style.maxWidth  = '100%';
+    };
+    window.addEventListener ('resize', function() { resize(); });
+    window.addEventListener ('load',   function() { resize(); });
+  </script>
+</body>
+</html>

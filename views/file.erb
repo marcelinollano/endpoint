@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title><%= @item.name %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/favicon.ico" rel="shortcut icon" />
+  <style>
+  body    {
+    background-color: #fff;
+    font-size: 62.5%;
+    text-align: center;
+  }
+  section {
+    margin: 2.6em auto;
+    padding: 0 2em;
+  }
+  a {
+    background-color: #1eaeec;
+    border-radius: 3px;
+    box-shadow: #1a84c1 0 -1px 0 inset;
+    color: #fff;
+    display: block;
+    font-family: 'Avenir Next', 'Helvetica Neue', sans-serif;
+    font-size: 2em;
+    font-weight: 400;
+    line-height: 2.6em;
+    margin: 0 auto;
+    max-width: 14em;
+    min-width: 8em;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  a:active {
+    background-color: #1a84c1;
+    box-shadow: none;
+  }
+  </style>
+</head>
+<body>
+  <section>
+    <a href="<%= ENV['short'] %>/<%= @item.url %>"><%= @item.name %></a>
+  </section>
+</body>
+</html>
