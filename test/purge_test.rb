@@ -48,6 +48,6 @@ class PurgeTest < Test::Unit::TestCase
     assert_equal(3, items.length)
 
     cleanup!
-    Process.kill(9, pid);
+    Process.kill('TERM', pid);
   end
 end
