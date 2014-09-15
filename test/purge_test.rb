@@ -14,9 +14,7 @@ class PurgeTest < Test::Unit::TestCase
       "SHORT='http://localhost:3000/'"
     ].join(' ')
 
-    system('echo')
-    system('echo')
-    pid = fork { exec "#{env} rackup -p 3000 -E test" }
+    pid = spawn("#{env} rackup -p 3000 -E test", :err => '/dev/null')
 
     create_media(5)
     items = App::Item.all
@@ -51,6 +49,5 @@ class PurgeTest < Test::Unit::TestCase
 
     cleanup!
     Process.kill(9, pid);
-    system('echo')
   end
 end
