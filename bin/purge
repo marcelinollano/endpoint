@@ -5,8 +5,10 @@ require 'sequel'
 require 'dotenv'
 Dotenv.load
 
-DB   = Sequel.connect("sqlite://db/#{ENV['RACK_ENV']}.sqlite3")
+PATH = File.join(File.dirname(__FILE__), '..', 'db', "#{ENV['RACK_ENV']}.sqlite3")
+DB   = Sequel.sqlite(PATH)
 TIME = Time.now - (ENV['PURGE'].to_i * 86400)
+
 DB[:items].where('created_at <= ?', TIME).all.each do |item|
   system("curl -X DELETE \"#{ENV['SHORT']}/api?token=#{ENV['TOKEN']}&slug=#{item[:slug]}\" &> /dev/null")
 end
