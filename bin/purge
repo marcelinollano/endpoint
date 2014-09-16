@@ -3,12 +3,13 @@
 require 'rubygems'
 require 'sequel'
 require 'dotenv'
-Dotenv.load
 
-PATH = File.join(File.dirname(__FILE__), '..', 'db', "#{ENV['RACK_ENV']}.sqlite3")
-DB   = Sequel.sqlite(PATH)
+ROOT = File.join(File.dirname(__FILE__), '..')
+Dotenv.load(File.join(ROOT, '.env'))
+
+DB   = Sequel.sqlite(File.join(ROOT, 'db', "#{ENV['RACK_ENV']}.sqlite3"))
 TIME = Time.now - (ENV['PURGE'].to_i * 86400)
 
 DB[:items].where('created_at <= ?', TIME).all.each do |item|
-  system("curl -X DELETE \"#{ENV['SHORT']}/api?token=#{ENV['TOKEN']}&slug=#{item[:slug]}\" &> /dev/null")
+  system("curl -X DELETE '#{ENV['SHORT']}/api?token=#{ENV['TOKEN']}&slug=#{item[:slug]}' &> /dev/null")
 end
