@@ -8,7 +8,7 @@ If you love hacking your own tools, this is for you.
 
 ## How to Install
 
-You will need to install [Ruby 2.1.2](http://ruby-lang.org), [Bundler](bundler.io) and [SQLite](https://en.wikipedia.org/wiki/SQLite). Other than that it is all pretty simple:
+You will need to install [Ruby](http://ruby-lang.org), [Bundler](bundler.io) and [SQLite](https://en.wikipedia.org/wiki/SQLite). Other than that it is all pretty simple:
 
 1. `cp .env-example .env` and customize the `.env` file.
 2. `bundle install` to install all the missing gems.
@@ -129,13 +129,13 @@ I wrote some tests to be sure that everything is working. I use a black box appr
 You can run the test suite issuing the following command:
 
 ```
-bundle rake
+bundle exec rake
 ```
 
 The tests cover the bare minimum and some of them are brittle. If for some reason you have to clean previous tests' leftovers, there is a command for that:
 
 ```
-bundle rake clean
+bundle exec rake clean
 ```
 
 ## Conclusions
