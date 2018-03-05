@@ -1,6 +1,6 @@
 require_relative 'test_helper.rb'
 
-class AuthTest < Test::Unit::TestCase
+class TestAuth < Minitest::Test
   include Rack::Test::Methods
   include Rack::Test::Utils
 

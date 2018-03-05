@@ -1,6 +1,6 @@
 require_relative 'test_helper.rb'
 
-class LinksTest < Test::Unit::TestCase
+class TestLinks < Minitest::Test
   include Rack::Test::Methods
   include Rack::Test::Utils
 

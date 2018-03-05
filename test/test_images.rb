@@ -1,6 +1,6 @@
 require_relative 'test_helper.rb'
 
-class ImagesTest < Test::Unit::TestCase
+class TestImages < Minitest::Test
   include Rack::Test::Methods
   include Rack::Test::Utils
 

@@ -1,6 +1,6 @@
 require_relative 'test_helper.rb'
 
-class ParamsTest < Test::Unit::TestCase
+class TestParams < Minitest::Test
   include Rack::Test::Methods
   include Rack::Test::Utils
 

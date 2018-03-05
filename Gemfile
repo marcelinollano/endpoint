@@ -5,10 +5,12 @@ gem 'dotenv'
 gem 'sinatra'
 gem 'sequel'
 gem 'sqlite3'
+gem 'curb'
 # gem 'rack-rewrite'
 
 group :test do
   gem 'rack-test'
-  gem 'turn'
+  gem 'minitest'
+  gem 'minitest-reporters'
   gem 'guard-rake'
 end

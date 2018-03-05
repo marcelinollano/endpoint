@@ -1,6 +1,6 @@
 require_relative 'test_helper.rb'
 
-class PurgeTest < Test::Unit::TestCase
+class TestPurge < Minitest::Test
   include Rack::Test::Methods
   include Rack::Test::Utils
 
@@ -11,7 +11,7 @@ class PurgeTest < Test::Unit::TestCase
       "RACK_ENV=#{ENV['RACK_ENV']}",
       "MEDIA=#{ENV['MEDIA']}",
       "TOKEN=#{ENV['TOKEN']}",
-      "SHORT='http://localhost:3000/'"
+      "SHORT='http://localhost:3000'"
     ].join(' ')
 
     pid = spawn("#{env} rackup -p 3000 -E test", :err => '/dev/null')

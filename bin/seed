@@ -1,13 +1,16 @@
 #!/usr/bin/env ruby
 
 require 'rubygems'
+require 'curb'
 require 'dotenv'
 Dotenv.load
 
 Dir.glob('./test/fixtures/*').each do |file|
-  system("curl --form \"media=@#{file}\" \"#{ENV['SHORT']}/api?token=#{ENV['TOKEN']}\"")
-  puts
+  c = Curl::Easy.new("#{ENV['SHORT']}/api?token=#{ENV['TOKEN']}")
+  c.multipart_form_post = true
+  c.http_post(Curl::PostField.file('media', file))
   sleep(1)
 end
-system("curl -X GET \"#{ENV['SHORT']}/api?token=#{ENV['TOKEN']}&url=https://en.wikipedia.org/wiki/Shiba_Inu\"")
-puts
+
+params = {:token => ENV['TOKEN'], :url => 'https://en.wikipedia.org/wiki/Shiba_Inu'}
+Curl.get("#{ENV['SHORT']}/api", params)

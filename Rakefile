@@ -4,7 +4,7 @@ require 'fileutils'
 require 'rake/testtask'
 
 Rake::TestTask.new do |t|
-  t.pattern = 'test/*_test.rb'
+  t.pattern = 'test/test_*.rb'
 end
 
 desc('Clean tests')

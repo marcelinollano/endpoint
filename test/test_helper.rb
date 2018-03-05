@@ -1,6 +1,11 @@
 require 'rack/test'
-require 'turn/autorun'
-Turn.config.format = :outline
+require 'minitest/autorun'
+require 'minitest/reporters'
+Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new(:color => true)]
+
+# Please do not be annoying Ruby
+#
+$VERBOSE = nil
 
 # Override environment variables for testing.
 # The URLs do not matter.

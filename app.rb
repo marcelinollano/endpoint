@@ -214,7 +214,7 @@ private
   # Returns 400 if not valid.
   #
   def valid_media?(params)
-    unless params['media'].is_a?(Hash) && File.exists?(params['media'][:tempfile])
+    unless params['media'].is_a?(Hash) && File.exist?(params['media'][:tempfile])
       bad_request
     end
   end
